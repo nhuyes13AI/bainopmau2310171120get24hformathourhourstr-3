@@ -43,7 +43,7 @@ get_24hformat_hour('11 PM')            | 23                     | 12
 #region bailam
 import re
 def get_24hformat_hour(hour_str):
-  regex = r"([01]?[0-9]|)(:[0-12])?(?:\s?[A|P]M)?"
+  regex = r"([01]?[0-9]|2[0-3])(:[0-5][0-9])?(?:\s?[A|P]M)?"
   m = re.findall(regex, hour_str)[0]
   hour = m[0]
   if "am" in hour_str and hour == "12":
